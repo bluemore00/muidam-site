@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
 @layer base {
-  body {
-    @apply bg-[#FBF9F6] text-[#2C2A29] antialiased;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* 고정 헤더 높이만큼 여백 */
   }
+  body {
+    @apply bg-stone-50 text-stone-800 antialiased;
+    word-break: keep-all;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 @keyframes fadeIn {
